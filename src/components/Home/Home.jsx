@@ -45,8 +45,18 @@ const Home = () => {
                     }
                 </div>
 
-                <div className="cart">
-                    <h3>Credit Hour Remaining hr</h3>
+                <div className="cart bg-white w-[280px] h-[500px] rounded-md p-5">
+                    <h3 className="text-center mt-4 mb-4">Credit Hour Remaining hr</h3>
+                    <hr/>
+                    <h2 className="text-xl font-bold mt-4 mb-8">Course Name</h2>
+                    <div className="mb-5">
+
+                    </div>
+                    <hr />
+                    <p className="mt-4 mb-4">Total Credit Hour :</p>
+                    <hr/>
+                    <h3 className="mt-4 font-bold">Total Price : USD</h3>
+
                 </div>
             </div>
         </div>
