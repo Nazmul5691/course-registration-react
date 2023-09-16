@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
-const Cart = ({selectedCourses}) => {
+const Cart = ({selectedCourses,remaining, totalCost, totalPrice}) => {
     
     // const totalCredits = selectedCourses.reduce((acc, course) => acc + course.credit, 0);
     // const totalRemaining = selectedCourses.reduce((acc, course) => acc - course.credit, 20);
@@ -9,10 +9,11 @@ const Cart = ({selectedCourses}) => {
     console.log(selectedCourses);
     return (
         <div>
-            <h3 className="text-center mt-4 mb-4">Credit Hour Remaining totalRemaining hr</h3>
+            <h3 className="text-center mt-4 mb-4">Credit Hour Remaining {remaining} hr</h3>
             <hr/>
             <h2 className="text-xl font-bold mt-4 mb-8">Course Name</h2>
             
+            <div className="mb-4">
             {
                 selectedCourses.map(course =>(
                     
@@ -20,9 +21,10 @@ const Cart = ({selectedCourses}) => {
                     
                 ))
             }
+            </div>
             
             <hr />
-            <p className="mt-4 mb-4">Total Credit Hour :totalCredits
+            <p className="mt-4 mb-4">Total Credit Hour : {totalCost} hr
             {/* {
                 selectedCourses.map(course =>(
                     
@@ -35,7 +37,7 @@ const Cart = ({selectedCourses}) => {
 
             </p>
             <hr/>
-            <h3 className="mt-4 font-bold">Total Price : totalPrice USD</h3>
+            <h3 className="mt-4 font-bold">Total Price : {totalPrice} USD</h3>
         </div>
     );
 };
