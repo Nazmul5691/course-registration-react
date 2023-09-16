@@ -4,7 +4,7 @@
 
 ## 2. Alerts: I have included alert system for limitations using SweetAlert2.
 
-## 3. Calculation : Through calculation, I can take the maximum number of courses and add the prices. 
+## 3. Calculation : Through calculation,I can take the maximum number of courses and add the prices. 
 
 
 
