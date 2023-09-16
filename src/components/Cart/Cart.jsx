@@ -15,35 +15,15 @@ const Cart = ({selectedCourses,remaining, totalCost, totalPrice}) => {
             
             
             <div className="mb-4">
-  <ol>
-    {selectedCourses.map((course, index) => (
-      <li key={course.id}>{index + 1}. {course.title}</li>
-    ))}
-  </ol>
-</div>
-            {/* <div className="mb-4">
-            <ol>
-            {            
-                selectedCourses.map(course =>(
-
-                        <li key={course.id}>{course.title}</li>
-
-                    ))    
-            }
-            </ol>
-            </div> */}
-            
+                <ol>
+                    {selectedCourses.map((course, index) => (
+                        <li key={course.id}>{index + 1}. {course.title}</li>
+                    ))}
+                </ol>
+            </div>
+           
             <hr />
             <p className="mt-4 mb-4">Total Credit Hour : {totalCost} hr
-            {/* {
-                selectedCourses.map(course =>(
-                    
-                    <div>
-                        {course.credit}
-                    </div>
-                
-            ))
-            } */}
 
             </p>
             <hr/>

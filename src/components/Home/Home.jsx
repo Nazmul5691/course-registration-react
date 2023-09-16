@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import Swal from "sweetalert2";
-// import { BsBookmark } from 'react-icons/fa';
+
 
 
 
@@ -78,7 +78,6 @@ const Home = () => {
                                         <p className="text-[16px]"><small><span className="mr-2">$</span>Price: {course.price}</small></p>
                                         <div className="flex">
                                             <div className="text-xs pt-2 mr-3">
-                                               {/* <p><BsBookmark></BsBookmark></p> */}
                                             </div>
                                             <div>
                                                 <p><small> Credit: {course.credit}hr</small></p>
