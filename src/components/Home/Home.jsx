@@ -2,7 +2,9 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
+import Swal from "sweetalert2";
 // import { BsBookmark } from 'react-icons/fa';
+
 
 
 const Home = () => {
@@ -25,7 +27,12 @@ const Home = () => {
         let total = course.price;
 
         if(isExist){
-           return alert('already selected')
+           return Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'You have already selected this course !',
+            
+          })
         }
         else{
             selectedCourses.forEach(item=>{
@@ -36,7 +43,12 @@ const Home = () => {
             const totalRemaining =20 - count;
             
             if(count > 20){
-               return  alert('wait ! tmi r course nite perba na, limit ses')
+               return  Swal.fire({
+                icon: 'error',
+                title: 'Credit limit is over...',
+                text: "You can't take any more credit !",
+                
+              })
             }
             else{
                 setTotalCost(count)

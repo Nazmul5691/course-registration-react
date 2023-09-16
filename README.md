@@ -1,8 +1,22 @@
-# React + Vite
+# Three Project features:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Responsive Design: Trying to ensure that this project is fully responsive, so it looks and works well on various devices, including desktops, tablets, and mobile phones. Use tailwind CSS for responsive .
 
-Currently, two official plugins are available:
+## 2. Alerts: I have included alert system for limitations using SweetAlert2.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 3. Calculation : Through calculation, I can take the maximum number of courses and add the prices. 
+
+
+
+# State Management
+
+How i managed the state in my assignment project: First i use useState hook that React provides. Then import useState. Thats allows you to define and manage state within functional components. Then i added Props drilling  system . This system is use for sharing state between parent and child components.
+
+
+
+
+
+ 
+
+
+
