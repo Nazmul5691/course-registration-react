@@ -1,11 +1,16 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
+import Cart from "../Cart/Cart";
 // import { BsBookmark } from 'react-icons/fa';
 
 
 const Home = () => {
     const [allCourses, setAllCourses] = useState([])
+    const [selectedCourses, setSelectedCourses] = useState([])
+    const [remaining, setRemaining] = useState(0)
+    const [totalCost, setTotalCost] = useState(0)
+    
 
     useEffect(() => {
         fetch('./data.json')
@@ -13,9 +18,27 @@ const Home = () => {
         .then(data => setAllCourses(data))
     }, []) 
 
+    const handleSelectActor =(course) =>{
+        const isExist = selectedCourses.find(item =>item.id == course.id)
+        let count =course.credit;
+
+        if(isExist){
+           return alert('already selected')
+        }
+        else{
+            selectedCourses.forEach(item=>{
+                count= count+ item.credit
+            })
+            console.log(count);
+            setSelectedCourses([...selectedCourses, course])
+        }
+
+       
+    }
+    
     return (
         <div>
-            <h1 className='text-6xl text-center mt-10 mb-5'>Vite + React</h1>
+            <h1 className='text-6xl text-center mt-10 mb-5'>Course Registration</h1>
 
             <div className='container flex w-11/12 mx-auto justify-between'>
                 <div className="home-container grid grid-cols-3 gap-4">
@@ -38,7 +61,7 @@ const Home = () => {
                                         </div>
                                         
                                     </div>
-                                    <button className="bg-sky-700 text-white w-full rounded-md h-8">Select</button>
+                                    <button onClick={()=>handleSelectActor(course)} className="bg-sky-700 text-white w-full rounded-md h-8">Select</button>
                                 </div>
                             </div>
                         ))
@@ -46,16 +69,7 @@ const Home = () => {
                 </div>
 
                 <div className="cart bg-white w-[280px] h-[500px] rounded-md p-5">
-                    <h3 className="text-center mt-4 mb-4">Credit Hour Remaining hr</h3>
-                    <hr/>
-                    <h2 className="text-xl font-bold mt-4 mb-8">Course Name</h2>
-                    <div className="mb-5">
-
-                    </div>
-                    <hr />
-                    <p className="mt-4 mb-4">Total Credit Hour :</p>
-                    <hr/>
-                    <h3 className="mt-4 font-bold">Total Price : USD</h3>
+                    <Cart selectedCourses={selectedCourses}></Cart>
 
                 </div>
             </div>
